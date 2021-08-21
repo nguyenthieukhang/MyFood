@@ -21,27 +21,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FoodTrackingActivity">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="top"
-        android:background="#8000">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="top">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tfl2_logo"
-            android:contentDescription="@string/tensorflow_lite_logo_description" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/tensorflow_lite_logo_description"
+                android:src="@drawable/tfl2_logo" />
 
-    </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
+    </androidx.camera.view.PreviewView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recognitionResults"
@@ -50,4 +50,6 @@
         android:layout_gravity="bottom"
         android:orientation="vertical"
         app:layoutManager="LinearLayoutManager"  />
+
+
 </merge>
