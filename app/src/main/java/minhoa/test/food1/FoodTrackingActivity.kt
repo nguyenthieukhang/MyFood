@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.RecyclerView
 import minhoa.test.food1.ml.LiteModelAiyVisionClassifierFoodV11
 import org.tensorflow.lite.support.image.TensorImage
 import java.util.concurrent.Executors
-import kotlin.random.Random
 
 // Constants
 private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results dislayed
@@ -53,7 +52,7 @@ class FoodTrackingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.tracking_activity)
 
         // Request camera permissions
         if (allPermissionsGranted()) {

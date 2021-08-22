@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/about"
+            android:title="About"
+            android:icon="@drawable/ic_info" />
+    </group>
+
+    <item android:title="Contact us">
+        <menu>
+            <item
+                android:id="@+id/nguyen_mail"
+                android:title="nknguyen19@apcs.vn" />
+            <item
+                android:id="@+id/khang_mail"
+                android:title="ntkhang19@apcs.vn" />
+            <item
+                android:id="@+id/phu_mail"
+                android:title="dtphu19@apcs.vn"/>
+
+        </menu>
+    </item>
+
+</menu> <?xml version="1.0" encoding="utf-8"?>

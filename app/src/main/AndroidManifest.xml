@@ -25,6 +25,7 @@
         </activity>
         
         <activity android:name=".FoodTrackingActivity"/>
+        <activity android:name=".About"/>
 
     </application>
 
