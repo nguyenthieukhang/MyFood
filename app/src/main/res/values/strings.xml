@@ -4,6 +4,6 @@
     <string name="permission_deny_text">Required permissions denied. Exiting.</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
-    <string name="about">This application helps you to know what kind of food you have as well as the nutrition in it. We try to bring you the best meal. So please, enjoy your meal</string>
+    <string name="about">This application helps you to know what kind of food you have as well as its recipe. We try to bring you the best meal. So please, enjoy your meal</string>
     <string name="wish">From Phu, Khang, Nguyen with love</string>
 </resources>

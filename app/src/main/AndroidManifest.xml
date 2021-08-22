@@ -8,6 +8,8 @@
 
     <!-- Specifying that the app will need camera permission -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -26,6 +28,7 @@
         
         <activity android:name=".FoodTrackingActivity"/>
         <activity android:name=".About"/>
+        <activity android:name=".FoodInfo"/>
 
     </application>
 

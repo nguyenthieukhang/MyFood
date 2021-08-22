@@ -39,7 +39,8 @@
             android:text="@{recognitionItem.label}"
             android:textColor="@color/white"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            tools:text="Orange" />
+            tools:text="Orange"
+            android:onClick="showFood" />
 
         <TextView
             android:id="@+id/recognitionProb"

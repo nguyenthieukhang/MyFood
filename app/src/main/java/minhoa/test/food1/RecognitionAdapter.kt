@@ -3,6 +3,7 @@ package minhoa.test.food1
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,12 @@ import minhoa.test.food1.databinding.RecognitionItemBinding
 
 class RecognitionAdapter(private val ctx: Context) :
     ListAdapter<Recognition, RecognitionViewHolder>(RecognitionDiffUtil()) {
-
+    companion object {
+        lateinit var context : Context
+    }
+    init {
+        context = ctx
+    }
     /**
      * Inflating the ViewHolder with recognition_item layout and data binding
      */
@@ -33,6 +39,7 @@ class RecognitionAdapter(private val ctx: Context) :
         override fun areContentsTheSame(oldItem: Recognition, newItem: Recognition): Boolean {
             return oldItem.confidence == newItem.confidence
         }
+
     }
 
 
@@ -48,4 +55,9 @@ class RecognitionViewHolder(private val binding: RecognitionItemBinding) :
         binding.recognitionItem = recognition
         binding.executePendingBindings()
     }
+
+    fun showFood() {
+        Toast.makeText(RecognitionAdapter.context,"Hello World", Toast.LENGTH_SHORT)
+    }
+
 }

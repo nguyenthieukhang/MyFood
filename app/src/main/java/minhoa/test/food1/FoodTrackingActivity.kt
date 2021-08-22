@@ -3,6 +3,7 @@ package minhoa.test.food1
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.camera.core.*
@@ -173,6 +176,7 @@ class FoodTrackingActivity : AppCompatActivity() {
         }
     }
 
+
     private class ImageAnalyzer(ctx: Context, private val listener: RecognitionListener) :
         ImageAnalysis.Analyzer {
 
@@ -206,6 +210,8 @@ class FoodTrackingActivity : AppCompatActivity() {
             // Close the image,this tells CameraX to feed the next image to the analyzer
             imageProxy.close()
         }
+
+
 
         /**
          * Convert Image Proxy to Bitmap
@@ -246,6 +252,12 @@ class FoodTrackingActivity : AppCompatActivity() {
         }
     }
 
+    fun showFood(view: View) {
+        var intent = Intent(this, FoodInfo::class.java)
+        var textView : TextView = view as TextView
+        intent.putExtra("food", textView.text)
+        startActivity(intent)
+    }
 
 
 }
