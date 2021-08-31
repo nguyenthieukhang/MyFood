@@ -28,6 +28,7 @@ import java.util.concurrent.Executors
 
 // Constants
 private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results dislayed
+private const val LOWER_BOUND_PROBABILITY_FOR_DISPLAY = 0.6;
 private const val TAG = "FOOD" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA) // permission needed
@@ -201,7 +202,7 @@ class FoodTrackingActivity : AppCompatActivity() {
                 }.take(MAX_RESULT_DISPLAY) // take the top results
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
-                items.add(Recognition(output.label, output.score))
+                if(output.score >= LOWER_BOUND_PROBABILITY_FOR_DISPLAY) items.add(Recognition(output.label, output.score))
             }
 
             // Return the result
