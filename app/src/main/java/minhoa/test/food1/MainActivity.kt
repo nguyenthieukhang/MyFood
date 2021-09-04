@@ -1,12 +1,17 @@
 package minhoa.test.food1
 
 import android.content.Intent
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.VideoView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -27,6 +32,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         initToolbar()
         init()
         setNavigationViewListener()
+        displayLogo()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        displayLogo()
+    }
+
+    private fun displayLogo() {
+        var vvLogo : VideoView = findViewById(R.id.logo_video)
+        var uri : Uri = Uri.parse("android.resource://minhoa.test.food1/" + R.raw.logo)
+        vvLogo.setVideoURI(uri)
+        vvLogo.requestFocus()
+        vvLogo.setZOrderOnTop(true)
+        vvLogo.start()
     }
 
     private fun initToolbar() {
