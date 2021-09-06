@@ -10,6 +10,7 @@ import org.json.JSONObject
 import org.json.JSONTokener
 import java.io.IOException
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.view.View
 import android.widget.ScrollView
 import androidx.fragment.app.FragmentManager
@@ -146,6 +147,7 @@ class FoodInfo : AppCompatActivity() {
     }
 
     fun showRecipe(view: View) {
+        MediaPlayer.create(this, R.raw.btn_click).start()
         Thread(Runnable {
             this@FoodInfo.runOnUiThread(java.lang.Runnable {
                 this.tvInfo.setText(recipe)
@@ -153,6 +155,7 @@ class FoodInfo : AppCompatActivity() {
         }).start()
     }
     fun showNutrition(view: View) {
+        MediaPlayer.create(this, R.raw.btn_click).start()
         Thread(Runnable {
             this@FoodInfo.runOnUiThread(java.lang.Runnable {
                 this.tvInfo.setText(nutrition)

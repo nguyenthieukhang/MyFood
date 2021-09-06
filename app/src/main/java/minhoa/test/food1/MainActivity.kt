@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         btn_navbar = findViewById(R.id.app_bar_nav_btn_show_drawer)
         btn_navbar.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
+                findViewById<VideoView>(R.id.logo_video).setZOrderOnTop(false)
                 drawerlayout.openDrawer(GravityCompat.START)
             }
         })
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     fun start(view: View) {
+        MediaPlayer.create(this, R.raw.btn_click).start()
         val intent = Intent(this, FoodTrackingActivity::class.java)
         startActivity(intent)
     }

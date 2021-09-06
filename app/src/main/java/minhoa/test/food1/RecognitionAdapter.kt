@@ -55,9 +55,4 @@ class RecognitionViewHolder(private val binding: RecognitionItemBinding) :
         binding.recognitionItem = recognition
         binding.executePendingBindings()
     }
-
-    fun showFood() {
-        Toast.makeText(RecognitionAdapter.context,"Hello World", Toast.LENGTH_SHORT)
-    }
-
 }
